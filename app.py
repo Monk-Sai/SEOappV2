@@ -20,6 +20,10 @@ nltk.download('wordnet')
 
 app = Flask(__name__)
 
+@app.route('/')
+def index():
+    return render_template('index.html')
+
 # Load pre-trained word embeddings
 word_vectors = api.load('fasttext-wiki-news-subwords-300')
 
@@ -99,7 +103,7 @@ def create_mindmap(keywords):
         "root": extracted_keywords[0] if extracted_keywords else None
     }
 
-@app.route('/', methods=['GET', 'POST'])
+""" @app.route('/', methods=['GET', 'POST']) """
 def index():
     if request.method == 'POST':
         file = request.files['file']
