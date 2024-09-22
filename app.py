@@ -103,7 +103,7 @@ def create_mindmap(keywords):
         "root": extracted_keywords[0] if extracted_keywords else None
     }
 
-""" @app.route('/', methods=['GET', 'POST']) """
+@app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
         file = request.files['file']
